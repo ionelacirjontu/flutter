@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Create Flutter app
+    command: |
+      export PATH="$PATH:/workspace/flutter/bin"
+      flutter create myapp
+      cd myapp
+      flutter run -d chrome
+ports:
+  - port: 5000
+    onOpen: open-preview
